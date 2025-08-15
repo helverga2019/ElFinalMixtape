@@ -1,0 +1,105 @@
+body {
+  background-color: black;
+
+}
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("Mom«t___.ttf");
+}
+
+
+
+.video-centro {
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column; /* apila el video y luego el texto */
+  align-items: center;    /* centra horizontalmente */
+   width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+
+
+
+.mi-texto {
+  margin-top: 20px; /* espacio entre video y texto */
+  font-family: 'MiFuente', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: left; /* mantiene las líneas alineadas como en tu ejemplo */
+}
+
+.imagenZaza {
+  width: 110px;      /* tamaño fijo */
+  height: auto;      /* mantiene la proporción */
+  transition: filter 0.2s ease;
+}
+
+.imagenZaza:hover {
+  transform: scale(1.1);
+  filter: brightness(1.55);
+}
+
+.KushcoreBanner {
+  width: 250px;           /* Ocupa el 15% del ancho de la pantalla */
+  height: auto;         /* Mantiene proporción */
+  position: absolute;   /* Se fija en un lugar */
+  top: 2%;              /* Distancia desde arriba en % para que se adapte */
+  left: 40%;            /* Distancia desde la izquierda en % */
+}
+
+.KushcoreBanner:hover {
+   transform: scale(1.1);
+  filter: brightness(1.55);
+  transition: filter 0.3s ease;
+}
+
+
+
+
+
+.PegiKushcore {
+  width: 100px;     /* ancho de la imagen */
+  height: auto;     /* mantiene proporción */
+  position: fixed;  /* queda fija en la pantalla */
+  top: 75%;         /* posición vertical */
+  left: 0;          /* posición horizontal */
+  z-index: 9999;    /* para que esté encima de todo */
+}
+.PegiKushcore:hover {
+transform: scale(1.1)
+}
+
+
+
+main {
+  display: flex;
+  flex-direction: column; /* Uno abajo del otro */
+  align-items: center; /* Centra todo horizontalmente */
+}
+
+
+#comentarios {
+  font-family: "MiFuente";
+  max-width: 1000px; /* igual que el video */
+  width: 80%; /* igual que el video */
+  color: white;
+  margin-top: 20px; /* espacio entre video y comentarios */
+}
+
+#formComentario input,
+#formComentario textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+#listaComentarios {
+  margin-top: 20px;
+}
+
+.comentario {
+  border-bottom: 4px solid rgb(0, 0, 0);
+  padding: 5px 0;
+}

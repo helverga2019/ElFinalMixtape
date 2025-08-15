@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ElFinalMix</title>
+<!-- favicon -->
+ <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Vincular el CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+      <a href="https://linktr.ee/kushcore" target="_blank">
+    <img src="H (3).png" class="imagenZaza">
+    </a>
+  
+  </header>
+
+
+   <a href="https://www.kushcore.online/" target="_blank">
+   <img src="kus core.png" class="KushcoreBanner">
+   </a>
+
+
+
+
+
+ <figure>
+  <a href="pages/el_boombap_es_mi_vida.html" target="_self">
+   <img src="Pegi kushcore.png" class="PegiKushcore">
+ </a>
+</figure>
+<main>
+  <!-- Video -->
+  <div class="video-container">
+    <video src="video.mp4" controls autoplay muted loop class="video-centro"></video>
+  </div>
+
+<!-- Comentarios -->
+<section id="comentarios">
+  <h2>Comentarios</h2>
+  <form id="formComentario">
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <textarea id="mensaje" placeholder="Escribí tu comentario..." required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="listaComentarios"></div>
+</section>
+</main>
+
+<script>
+  const form = document.getElementById('formComentario');
+  const lista = document.getElementById('listaComentarios');
+
+  // Si ya comentó antes, desactivar el formulario
+  if (localStorage.getItem('yaComento') === 'true') {
+    form.innerHTML = "<p style='color: gray;'>Ya comentaste. Solo se permite un comentario por persona. corte que tkbio</p>";
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (localStorage.getItem('yaComento') === 'true') {
+      alert("Ya comentaste, no podés volver a hacerlo.");
+      return;
+    }
+
+    const nombre = document.getElementById('nombre').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const nuevo = document.createElement('div');
+    nuevo.classList.add('comentario');
+    nuevo.innerHTML = `<strong>${nombre}:</strong> ${mensaje}`;
+    lista.appendChild(nuevo);
+
+    // Guardar que ya comentó
+    localStorage.setItem('yaComento', 'true');
+
+    // Mensaje de confirmación
+    form.innerHTML = "<p style='color: gray;'>ya esta.</p>";
+  });
+</script>
